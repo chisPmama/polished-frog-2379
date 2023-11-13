@@ -12,10 +12,10 @@ RSpec.describe Doctor do
     it {should have_many(:patients).through(:doctor_patients)}
   end
 
-  describe '#self.alphabetical' do
-    it 'returns the list of doctors in alphabetical order' do
-      alph_doc = Doctor.all.sort_by{|d| d.name}
-      expect(Doctor.alphabetical).to eq(alph_doc)
+  describe '#self.sort_doctors' do
+    it 'returns the list of doctors in order of patients seen' do
+      sort_doc = [@meredith, @mark, @alex, @cristina, @derek]
+      expect(Doctor.sort_doctors.to_a).to eq(sort_doc)
     end
   end
 

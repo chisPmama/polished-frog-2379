@@ -28,10 +28,10 @@ RSpec.describe "Hospital Show Page" do
     end
 
     it 'list of doctors are ordered from number of patients to least number of patients' do
+      expect(@meredith.name).to appear_before(@mark.name)
+      expect(@mark.name).to appear_before(@alex.name)
       expect(@alex.name).to appear_before(@cristina.name)
       expect(@cristina.name).to appear_before(@derek.name)
-      expect(@derek.name).to appear_before(@mark.name)
-      expect(@mark.name).to appear_before(@meredith.name)
     end
   end
 end

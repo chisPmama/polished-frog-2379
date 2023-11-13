@@ -1,6 +1,6 @@
 class HospitalsController < ApplicationController
   def show
     @hospital = Hospital.find(params[:id])
-    @doctors = Doctor.alphabetical
+    @doctors = Doctor.sort_doctors
   end
 end
